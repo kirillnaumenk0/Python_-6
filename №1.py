@@ -12,3 +12,17 @@
 # out
 # [28, 20, 10, 5, 1, 24, 7, 15, 23, 25]
 # [24, 15, 23, 25]
+
+from random import sample
+
+
+def new_list(size):
+    list_num = sample(range(size * 3), size)
+    print(list_num)
+    return [list_num[i] for i in range(1, len(list_num)) if list_num[i] > list_num[i-1]]
+
+num = int(input('Введите размер: '))
+if num > 1:
+    print(new_list(num))
+else:
+    print('Ошибка')
